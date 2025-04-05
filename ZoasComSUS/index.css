@@ -1,0 +1,26 @@
+body{
+    text-align: center;
+}
+
+h1{
+    font-size: 50pt;
+    text-align: center;
+    color: #2356AD;
+}
+h2{
+    color: #2356AD;
+}
+input{
+    margin: 15pt;
+}
+
+div#res{
+    color:red; 
+}
+footer{
+    margin-top: 30px;
+    text-align: center;
+    background-color:black;
+    color:white;
+    width:auto;
+}

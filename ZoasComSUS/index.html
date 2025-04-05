@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portifólio 1</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js"></script>
+</head>
+<body>
+    <header>
+        <h1>SUS</h1>
+        <h2>Sistema Único de Saúde</h2>
+        <h2>Ministério da Saúde</h2>
+    </header>
+    <section>
+        <p>Receba um diagnóstico rápido , de acordo com o que está sentindo.</p>
+
+        <div>
+            <select name="" id="doencas" >
+                <option value="">Selecione o sintoma.</option>
+                <option value="Febre">Febre</option>
+                <option value="Dor de cabeça">Dor de cabeça</option>
+                <option value="Dor no corpo">Dor no corpo</option>
+                <option value="Corrimento nasal">Corrimento nasal</option>
+                <option value="Tontura">Tontura</option>
+                <option value="Náusea">Náusea</option>
+            </select>
+        </div>
+
+        <input type="button" value="confirmar" onclick="verificarCaixa()">
+
+        <div id="res">
+        </div>
+
+    </section>
+    <p>Se persistirem o sintomas o médico deverá ser consultado. Esse tratamento é contraindicado em caso de suspeita de dengue.</p>
+    <footer>
+        <em>&copy;FabioKaio</em>
+    </footer>
+</body>
+</html>
