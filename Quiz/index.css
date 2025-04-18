@@ -1,0 +1,37 @@
+body{
+    text-align:center;
+    position: relative;
+    background-color: rgb(72, 154, 134);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header{
+    color: rgb(9, 141, 40);
+    background-color: rgb(67, 36, 99);
+    padding:1pt;
+}
+h2#titleask{
+    color: rgb(14, 66, 150);
+    font-size: 20pt;
+    font-weight: 700;
+}
+
+section{
+    background-color: rgb(97, 93, 206);
+    padding:13pt;
+    margin: 50pt;
+    border-radius: 5pt;
+}
+
+main{
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+    font-size: large;
+    margin-left:100pt;
+    margin-right: 100pt;
+}
+
+footer{
+    background-color: white;
+    padding: 5pt;
+}
