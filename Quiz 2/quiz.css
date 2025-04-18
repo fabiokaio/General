@@ -1,0 +1,29 @@
+body{
+    background-color: rgb(91, 47, 132);
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    flex-direction: column;
+}
+
+header{
+    background-color: rgb(163, 152, 31);
+    padding:2pt;
+    margin: 15pt;
+}
+section{
+    background-color: rgb(48, 62, 173);
+    padding: 10pt;
+    margin-left:15pt ;
+    margin-right: 15pt;
+    list-style-position: inside;
+}
+div#botao{
+    margin: 15pt;
+}
+footer{
+    background-color: rgb(0, 9, 5);
+    padding:2pt;
+    width: 100%;
+    position: fixed;
+}
