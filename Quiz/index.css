@@ -1,37 +1,135 @@
-body{
-    text-align:center;
-    position: relative;
-    background-color: rgb(72, 154, 134);
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-header{
-    color: rgb(9, 141, 40);
-    background-color: rgb(67, 36, 99);
-    padding:1pt;
-}
-h2#titleask{
-    color: rgb(14, 66, 150);
-    font-size: 20pt;
-    font-weight: 700;
-}
-
-section{
-    background-color: rgb(97, 93, 206);
-    padding:13pt;
-    margin: 50pt;
-    border-radius: 5pt;
-}
-
-main{
-    color: rgb(0, 0, 0);
-    font-weight: 600;
-    font-size: large;
-    margin-left:100pt;
-    margin-right: 100pt;
-}
-
-footer{
-    background-color: white;
-    padding: 5pt;
-}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 20px;
+  }
+  
+  header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  header h1 {
+    font-size: 2rem;
+    color: #2c3e50;
+  }
+  
+  #titleask {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #34495e;
+  }
+  
+  #conteudo {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  
+  .proxima {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    display: none;
+  }
+  
+  .proxima > p:first-child {
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #2c3e50;
+  }
+  
+  .proxima label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    margin: 10px 0;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    transition: background-color 0.3s, border 0.3s;
+  }
+  
+  .proxima label:hover {
+    background-color: #e3f0ff;
+    border-color: #3498db;
+  }
+  
+  .proxima input[type="radio"] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #aaa;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .proxima input[type="radio"]:checked {
+    background-color: #3498db;
+    border-color: #2980b9;
+  }
+  
+  .proxima input[type="radio"]:checked + span {
+    font-weight: bold;
+    color: #2980b9;
+  }
+  
+  .res {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  #next-btn {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  #next-btn:hover:not(:disabled) {
+    background-color: #2980b9;
+  }
+  
+  #next-btn:disabled {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
+  }
+  
+  .andamento {
+    width: 100%;
+    max-width: 700px;
+    height: 25px;
+    background-color: #ddd;
+    border-radius: 10px;
+    margin: 40px auto 20px;
+    overflow: hidden;
+  }
+  
+  #barra_progress {
+    height: 100%;
+    width: 0%;
+    background-color: red;
+    transition: width 0.5s ease, background-color 0.5s ease;
+  }
+  
+  footer {
+    text-align: center;
+    margin-top: 40px;
+    color: #777;
+  }
+  
