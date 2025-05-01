@@ -1,74 +1,92 @@
-// const questões = document.querySelectorAll(".pergunta");  //Pergunta principal
-// const nextBtn = document.getElementById("next-btn"); // Botão para prosseguir a pergunta
-// const barra_progress = document.getElementById("barra_progress"); //barra de progresso
+document.addEventListener("DOMContentLoaded", () => {
+    const perguntas = document.querySelectorAll(".proxima");
+    const btnResponder = document.getElementById("next-btn");
+    const barra = document.getElementById("barra_progress");
 
-// let current = 0; // Nível em que está a barra
-// const total = questões.length; 
+    let perguntaAtual = 0;
+    let pontuacao = 0;
 
-// function updateProgress() {
-//   const percentage = ((current + 1) / total) * 100; // Calculo da percentagem em que está o progresso na progressFill
-//   barra_progress.style.width = `${percentage}%`; 
+    // Mapeamento das respostas corretas por pergunta
+    const respostasCorretas = {
+        q1: "a2",
+        q2: "a3",
+        q3: "a3",
+        q4: "a2",
+        q5: "a4",
+        q6: "a1",
+        q7: "a3",
+        q8: "a2"
+    };
 
-//   if (percentage < 40) {
-//     barra_progress.style.backgroundColor = "red";
-//   } else if (percentage < 80) {
-//     barra_progress.style.backgroundColor = "yellow";
-//   } else {
-//     barra_progress.style.backgroundColor = "green";
-//   }
-// }
+    // Exibe somente a primeira pergunta
+    perguntas.forEach((p, i) => {
+        p.style.display = i === 0 ? "block" : "none";
+    });
 
-// nextBtn.addEventListener("click", () => {
-//   if (current < total - 1) {
-//     questões[current].classList.add("hidden");
-//     current++;
-//     questões[current].classList.remove("hidden");
-//     updateProgress();
-//   } else {
-//     questões[current].classList.add("hidden");
-//     nextBtn.style.display = "none";
-//     updateProgress();
-//   }
-// });
+    atualizarBarra();
 
-// updateProgress();
-// ChatGPT
+    btnResponder.addEventListener("click", () => {
+        const pergunta = perguntas[perguntaAtual];
+        const selecionado = pergunta.querySelector("input[type='radio']:checked");
 
-const perguntas = document.querySelectorAll(".pergunta, .proxima");
-const botao = document.getElementById("next-btn");
-const barra = document.getElementById("barra_progress");
+        if (!selecionado) {
+            alert("Selecione uma alternativa antes de continuar.");
+            return;
+        }
 
-let atual = 0;
-const total = perguntas.length;
+        const nome = selecionado.name;
+        const valor = selecionado.value;
+        const correta = respostasCorretas[nome];
 
-function atualizarBarra() {
-    const porcentagem = ((atual + 1) / total) * 100;
-    barra.style.width = `${porcentagem}%`;
+        const alternativas = pergunta.querySelectorAll("label");
 
-    if (porcentagem < 40) {
-        barra.style.backgroundColor = "red";
-    } else if (porcentagem < 80) {
-        barra.style.backgroundColor = "yellow";
-    } else {
-        barra.style.backgroundColor = "green";
-    }
-}
+        // Marcação visual
+        alternativas.forEach(label => {
+            const input = label.querySelector("input");
+            if (input.value === correta) {
+                label.classList.add("correta");
+            }
+            if (input.checked && input.value !== correta) {
+                label.classList.add("incorreta");
+            }
+        });
 
-botao.addEventListener("click", () => {
-    if (atual < total - 1) {
-        perguntas[atual].style.display = "none";
-        atual++;
-        perguntas[atual].style.display = "block";
-        atualizarBarra();
-    } else {
-        perguntas[atual].style.display = "none";
-        botao.style.display = "none";
-        atualizarBarra();
+        // Verifica se está correta
+        if (valor === correta) {
+            pontuacao++;
+        } else {
+            const textoCorreto = pergunta.querySelector(`input[value="${correta}"]`).nextElementSibling.textContent;
+            alert(`Incorreto! A resposta certa é:\n\n${textoCorreto}`);
+        }
+
+        // Aguarda um pouco para mostrar cores antes de passar
+        setTimeout(() => {
+            pergunta.style.display = "none";
+            perguntaAtual++;
+
+            if (perguntaAtual < perguntas.length) {
+                perguntas[perguntaAtual].style.display = "block";
+                atualizarBarra();
+            } else {
+                btnResponder.disabled = true;
+                btnResponder.innerText = `Fim do Quiz! Acertos: ${pontuacao}/${perguntas.length}`;
+                atualizarBarra();
+            }
+        }, 500);
+    });
+
+    function atualizarBarra() {
+        const progresso = ((perguntaAtual + 1) / perguntas.length) * 100;
+        barra.style.width = `${progresso}%`;
+
+        if (progresso <= 25) {
+            barra.style.backgroundColor = "red";
+        } else if (progresso <= 50) {
+            barra.style.backgroundColor = "yellow";
+        } else if (progresso <= 75) {
+            barra.style.backgroundColor = "green";
+        } else {
+            barra.style.backgroundColor = "blue";
+        }
     }
 });
-
-// Inicializar
-perguntas.forEach((el, idx) => {
-    el.style.display = idx === 0 ? "block" : "none";
-});
-atualizarBarra();
