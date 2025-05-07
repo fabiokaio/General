@@ -1,9 +1,8 @@
 *{
-    height: 100%;
+   
     margin: 0;
+    padding: 0;
     text-align: center;
-    display: flex;
-    flex-direction: column;
     font-family:Arial, Helvetica, sans-serif;
 }
 body{
@@ -12,11 +11,15 @@ body{
     background-size: cover;        /* Faz a imagem cobrir toda a tela */
     background-position: center;   /* Centraliza a imagem */
     background-repeat: no-repeat;  /* Evita que a imagem se repita */
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
 }
 #cabecalho{
-    color:white;
+    color:rgb(122, 214, 253);
     margin-bottom:50pt;
     padding: 20pt;
+    font-size:20pt
 }
 #top{
     font-size:30pt
@@ -26,7 +29,7 @@ body{
     margin-left: 200pt;
     margin-right: 200pt;
     padding:20pt;
-    height: 300pt;
+    height: 250pt;
     border-radius: 15pt;
 }
 #principal{
@@ -38,20 +41,39 @@ body{
     border-radius: 15pt;
     box-shadow:  0 0 10px rgba(0, 0, 0, 0.5);
 }
-#info{
-    font-size:16pt;
-    height: 10pt;
+
+input[type="text"],
+input[type="password"] {
+    padding: 10px;
+    font-size: 14pt;
+    border-radius: 5px;
+    margin: 10pt 0;
+    background-color: white;
+    color:black;
 }
-#login{
-    height: 20pt;
-    font-size:10pt;
-    margin-top:5pt;
+
+#login {
+    padding: 10px 20px;
+    font-size: 12pt;
+    background-color: #37004d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#login:hover {
+    background-color: #5c0091;
 }
 #roda_pe{
     background-color: rgba(55, 0, 77, 0.57);
     color:white;
     margin-top:30pt;
     padding: 10pt;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
 }
 a{
     color: grey;
