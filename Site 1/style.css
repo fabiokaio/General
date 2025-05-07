@@ -7,11 +7,16 @@
     font-family:Arial, Helvetica, sans-serif;
 }
 body{
-    background-color: black
+    background-color: black;
+    background-image:url(Background\ 3840\ x\ 2190.jpg);
+    background-size: cover;        /* Faz a imagem cobrir toda a tela */
+    background-position: center;   /* Centraliza a imagem */
+    background-repeat: no-repeat;  /* Evita que a imagem se repita */
 }
 #cabecalho{
     color:white;
     margin-bottom:50pt;
+    padding: 20pt;
 }
 #top{
     font-size:30pt
@@ -43,7 +48,7 @@ body{
     margin-top:5pt;
 }
 #roda_pe{
-    background-color: rgb(55, 0, 77);
+    background-color: rgba(55, 0, 77, 0.57);
     color:white;
     margin-top:30pt;
     padding: 10pt;
