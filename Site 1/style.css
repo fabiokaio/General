@@ -1,0 +1,53 @@
+*{
+    height: 100%;
+    margin: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    font-family:Arial, Helvetica, sans-serif;
+}
+body{
+    background-color: black
+}
+#cabecalho{
+    color:white;
+    margin-bottom:50pt;
+}
+#top{
+    font-size:30pt
+}
+#area_geral {
+    background-image:linear-gradient(rgb(7, 52, 155),rgb(43, 19, 94),rgb(55, 0, 77));
+    margin-left: 200pt;
+    margin-right: 200pt;
+    padding:20pt;
+    height: 300pt;
+    border-radius: 15pt;
+}
+#principal{
+    background-color: rgba(17, 52, 155, 0.482);
+    margin-left: 100pt;
+    margin-right: 100pt;
+    padding:20pt;
+    height: 200pt;
+    border-radius: 15pt;
+    box-shadow:  0 0 10px rgba(0, 0, 0, 0.5);
+}
+#info{
+    font-size:16pt;
+    height: 10pt;
+}
+#login{
+    height: 20pt;
+    font-size:10pt;
+    margin-top:5pt;
+}
+#roda_pe{
+    background-color: rgb(55, 0, 77);
+    color:white;
+    margin-top:30pt;
+    padding: 10pt;
+}
+a{
+    color: grey;
+}
