@@ -1,0 +1,18 @@
+#cabecalho{
+    background-image:linear-gradient(rgb(7, 52, 155),rgb(43, 19, 94),rgb(55, 0, 77));
+    color:rgb(122, 214, 253);
+    text-align: center;
+    padding: 17pt; 
+    margin-top:0.1px;   
+}
+#principal{
+    background-color: white;
+    color:black;
+    text-align: justify;
+    margin-left:100pt;
+    margin-right:100pt;
+}
+#roda_pe{
+    background-image:linear-gradient(rgb(7, 52, 155),rgb(43, 19, 94),rgb(55, 0, 77));
+    color:white;
+}
