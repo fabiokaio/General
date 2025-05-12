@@ -1,13 +1,17 @@
-const user = document.getElementById('user')
-const pass = document.getElementById('senha')
-const login = document.getElementsById('login')
+function verificarLogin() {
+    const usuario = document.getElementById("user").value.trim();
+    const senha = document.getElementById("senha").value.trim();
 
-login.addEventListener('click')
-
-function click(){
-    if (user &&  pass)
-         window.location.href = "index2.html"
-    else{
-        alert('Preencha os campos ')
+    if (usuario === "" || senha === "") {
+        alert("Por favor, preencha os dois campos antes de continuar.");
+    } else {
+        window.location.href = "index2.html";
     }
 }
+
+window.addEventListener("DOMContentLoaded", function () {
+    const botaoLogin = document.getElementById("login");
+    if (botaoLogin) {
+        botaoLogin.addEventListener("click", verificarLogin);
+    }
+});
